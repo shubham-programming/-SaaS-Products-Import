@@ -12,11 +12,12 @@ namespace SaaSProductsImport.DataAccess
         {
             _connectionString = connectionString;
         }
-        public void InsertProducts(FolderImporterModel products)
+        public int InsertProducts(ProductsModel products)
         {
             /*
                 Add logic for executing Database inserts 
             */
+            return 0;
         }
     }
 }

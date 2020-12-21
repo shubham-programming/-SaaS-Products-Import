@@ -5,9 +5,9 @@ using System.Text;
 
 namespace SaaSProductsImport.BusinessLogicLayer
 {
-    public interface IFileImporter
+    public interface IProductImporter
     {
-        public void ImportFile();
+        public void ImportFile(List<ProductImportConfiguration> productImportConfigurations);
 
         public bool CheckFolderExists(string path);
     }

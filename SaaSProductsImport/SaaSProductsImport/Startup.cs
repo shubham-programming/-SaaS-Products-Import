@@ -20,13 +20,9 @@ namespace SaaSProductsImport
         public static void AddInfrastructure()
         {
             serviceProvider.AddScoped<IProductDataAccess, ProductDataAccess>(i => new ProductDataAccess(BuildConnectionString()));
-            serviceProvider.AddScoped<IFileFormatParser, FileFormatParser>(i => new FileFormatParser(i.GetService<IProductDataAccess>()));
-            serviceProvider.AddScoped<IFileReader, FileReader>(i => new FileReader(i.GetService<IFileFormatParser>()));
-            serviceProvider.AddScoped<IFileImporter, FileImporter>(i => new FileImporter(i.GetService<IFileReader>()));
-           // serviceProvider.AddSingleton(Configuration.GetSection("ProductImportSources").Get<ProductsConfiguration>());
-           // serviceProvider.Configure<ProductsSourceCollectionModel>(Configuration.GetSection("ProductImportSources"));
-          //services.Configure<ProductSourceFolderModel>(options => Configuration.GetSection("MySettings").Bind(options));
-          // return serviceProvider;
+            serviceProvider.AddScoped<IProductFileFormatParser, ProductFileFormatParser>(i => new ProductFileFormatParser(i.GetService<IProductDataAccess>()));
+            serviceProvider.AddScoped<IProductFileReader, ProductFileReader>(i => new ProductFileReader(i.GetService<IProductFileFormatParser>()));
+            serviceProvider.AddScoped<IProductImporter, ProductFileImporter>(i => new ProductFileImporter(i.GetService<IProductFileReader>()));           
         }
 
         public static void Configure()

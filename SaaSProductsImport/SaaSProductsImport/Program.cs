@@ -11,11 +11,10 @@ namespace SaaSProductsImport
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            Startup.Configure();
-            Startup.getProductImportSources();
-            //var products = Startup.GetProductImportSources();
-            FileImporter fileImporter = new FileImporter(Startup.serviceProvider.BuildServiceProvider().GetService<FileReader>());
-            fileImporter.ImportFile();
+            Startup.Configure();            
+            var products = Startup.getProductImportSources();
+            ProductFileImporter fileImporter = new ProductFileImporter(Startup.serviceProvider.BuildServiceProvider().GetService<ProductFileReader>());
+            fileImporter.ImportFile(products);
             Console.ReadLine();
 
         }
