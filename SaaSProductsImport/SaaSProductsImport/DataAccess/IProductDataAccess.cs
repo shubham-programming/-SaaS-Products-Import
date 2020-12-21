@@ -7,7 +7,7 @@ namespace SaaSProductsImport.DataAccess
 {
     public interface IProductDataAccess
     {
-        public void InsertProducts(FolderImporterModel products);
+        public int InsertProducts(ProductsModel products);
         
     }
 }
