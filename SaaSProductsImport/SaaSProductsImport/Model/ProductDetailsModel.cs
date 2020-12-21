@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SaaSProductsImport.ProductModel
+namespace SaaSProductsImport.Model
 {
-    public class ProductBaseModel
+    public class ProductDetailsModel
     {
         private string Name { get; set; }
         private string [] Categories { get; set; }
