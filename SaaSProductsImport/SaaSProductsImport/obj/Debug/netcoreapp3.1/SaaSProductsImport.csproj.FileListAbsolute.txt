@@ -1,0 +1,13 @@
+C:\Users\sbhatna1\Documents\SaaS_Products_Import\SaaSProductsImport\SaaSProductsImport\bin\Debug\netcoreapp3.1\SaaSProductsImport.exe
+C:\Users\sbhatna1\Documents\SaaS_Products_Import\SaaSProductsImport\SaaSProductsImport\bin\Debug\netcoreapp3.1\SaaSProductsImport.deps.json
+C:\Users\sbhatna1\Documents\SaaS_Products_Import\SaaSProductsImport\SaaSProductsImport\bin\Debug\netcoreapp3.1\SaaSProductsImport.runtimeconfig.json
+C:\Users\sbhatna1\Documents\SaaS_Products_Import\SaaSProductsImport\SaaSProductsImport\bin\Debug\netcoreapp3.1\SaaSProductsImport.runtimeconfig.dev.json
+C:\Users\sbhatna1\Documents\SaaS_Products_Import\SaaSProductsImport\SaaSProductsImport\bin\Debug\netcoreapp3.1\SaaSProductsImport.dll
+C:\Users\sbhatna1\Documents\SaaS_Products_Import\SaaSProductsImport\SaaSProductsImport\bin\Debug\netcoreapp3.1\SaaSProductsImport.pdb
+C:\Users\sbhatna1\Documents\SaaS_Products_Import\SaaSProductsImport\SaaSProductsImport\obj\Debug\netcoreapp3.1\SaaSProductsImport.csprojAssemblyReference.cache
+C:\Users\sbhatna1\Documents\SaaS_Products_Import\SaaSProductsImport\SaaSProductsImport\obj\Debug\netcoreapp3.1\SaaSProductsImport.AssemblyInfoInputs.cache
+C:\Users\sbhatna1\Documents\SaaS_Products_Import\SaaSProductsImport\SaaSProductsImport\obj\Debug\netcoreapp3.1\SaaSProductsImport.AssemblyInfo.cs
+C:\Users\sbhatna1\Documents\SaaS_Products_Import\SaaSProductsImport\SaaSProductsImport\obj\Debug\netcoreapp3.1\SaaSProductsImport.csproj.CoreCompileInputs.cache
+C:\Users\sbhatna1\Documents\SaaS_Products_Import\SaaSProductsImport\SaaSProductsImport\obj\Debug\netcoreapp3.1\SaaSProductsImport.dll
+C:\Users\sbhatna1\Documents\SaaS_Products_Import\SaaSProductsImport\SaaSProductsImport\obj\Debug\netcoreapp3.1\SaaSProductsImport.pdb
+C:\Users\sbhatna1\Documents\SaaS_Products_Import\SaaSProductsImport\SaaSProductsImport\obj\Debug\netcoreapp3.1\SaaSProductsImport.genruntimeconfig.cache
