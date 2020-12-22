@@ -9,35 +9,44 @@ using System.Text;
 namespace SaaSProductsImport.BusinessLogicLayer
 {
     /*
-     * 'ProductFileImporter' class implements 'IProductFileImporter' interface . This class perform following functions --
-     *      a. Includes methods for importing files in accordance of fileSource - .csv, .json 
+     * 'ProductFileImporter' class implements 'IProductFileImporter' interface.-
+     *  Includes functions for importing files in accordance of fileSource - .csv, .json 
     */
     public class ProductFileImporter : IProductImporter
     {
-        // IProductFileReader object retrieved through dependency Injection
-        private IProductFileReader _FileReader;       
-        public ProductFileImporter(IProductFileReader fileReader )
-        {            
+        // IProductFileReader object initialized through dependency Injection
+        private IProductFileReader _FileReader;
+        public ProductFileImporter(IProductFileReader fileReader)
+        {
             _FileReader = Startup.serviceProvider.BuildServiceProvider().GetService<IProductFileReader>(); ;
         }
 
         /*
          * Function to check file source is folder/url/ , then reads files according to source .
-         * Ex - If source is folder then file is read from folder and not url source .
-         * Function accepts List of 'ProductImportConfiguration' class object which is POCO class mapping of product details keys present in appsettings.json 
         */
         public void ImportFile(List<ProductImportConfiguration> productImportConfigurations)
-        {            
+        {
+            //Iterate foreach import source defined in appsettings.json 
             foreach (ProductImportConfiguration importConfig in productImportConfigurations)
             {
+                // checks if file source is folder or url
                 if (!String.IsNullOrEmpty(importConfig.productsConfiguration.ProductFolderPath))
                 {
-                    foreach (string file in importConfig.productsConfiguration.ProductFiles)
+                    if (CheckFolderExists(importConfig.productsConfiguration.ProductFolderPath))
                     {
-                        var fileCompletePath = Path.Combine(importConfig.productsConfiguration.ProductFolderPath, file);
-                        _FileReader.ReadFilesFromFolder(fileCompletePath,file, importConfig.productsConfiguration.ImportOnDayOfWeek);
+                        //Iterate foreach file type defined in appsettings.json for folder
+                        foreach (string file in importConfig.productsConfiguration.ProductFiles)
+                        {
+                            // Build file complete Path
+                            var fileCompletePath = Path.Combine(importConfig.productsConfiguration.ProductFolderPath, file);
+                            // Read file content from folder
+                            _FileReader.ReadFilesFromFolder(fileCompletePath, file, importConfig.productsConfiguration.ImportOnDayOfWeek);
+                        }
                     }
+                    else
+                        Console.WriteLine("Directory does not exist at {0} .\nFolder needs to be created at {0} and product source files needs to be placed in folder.", importConfig.productsConfiguration.ProductFolderPath);
                 }
+                // checks if file source is folder or url
                 else if (!String.IsNullOrEmpty(importConfig.productsConfiguration.ProductDownloadUrl))
                 {
                     foreach (string file in importConfig.productsConfiguration.ProductFiles)
@@ -49,7 +58,7 @@ namespace SaaSProductsImport.BusinessLogicLayer
         }
 
         public bool CheckFolderExists(string path)
-        {            
+        {
             if (Directory.Exists(path))
             {
                 return true;

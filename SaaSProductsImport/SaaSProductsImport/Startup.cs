@@ -24,6 +24,7 @@ namespace SaaSProductsImport
         // Function to add services as perscope defined.        
         public static void AddInfrastructure()
         {
+            //Add scope for dependency injection
             serviceProvider.AddScoped<IProductDataAccess, ProductDataAccess>(i => new ProductDataAccess(BuildConnectionString()));
             serviceProvider.AddScoped<IProductFileFormatParser, ProductFileFormatParser>(i => new ProductFileFormatParser(i.GetService<IProductDataAccess>()));
             serviceProvider.AddScoped<IProductFileReader, ProductFileReader>(i => new ProductFileReader(i.GetService<IProductFileFormatParser>()));
@@ -36,7 +37,7 @@ namespace SaaSProductsImport
         {
             // Set up configuration sources.
             var builder = new ConfigurationBuilder();
-
+            //Add appsettings.json file
             builder
                   .AddJsonFile(
                       Path.Combine(AppContext.BaseDirectory, string.Format("..{0}..{0}..{0}", Path.DirectorySeparatorChar), $"appsettings.json"),
