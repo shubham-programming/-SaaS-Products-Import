@@ -400,6 +400,15 @@
             "rid": "win"
           }
         }
+      },
+      "YamlDotNet/9.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/YamlDotNet.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/YamlDotNet.dll": {}
+        }
       }
     }
   },
@@ -1239,6 +1248,30 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "YamlDotNet/9.1.0": {
+      "sha512": "fuvGXU4Ec5HrsmEc+BiFTNPCRf1cGBI2kh/3RzMWgddM2M4ALhbSPoI3X3mhXZUD1qqQd9oSkFAtWjpz8z9eRg==",
+      "type": "package",
+      "path": "yamldotnet/9.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net20/YamlDotNet.dll",
+        "lib/net20/YamlDotNet.xml",
+        "lib/net35-client/YamlDotNet.dll",
+        "lib/net35-client/YamlDotNet.xml",
+        "lib/net35/YamlDotNet.dll",
+        "lib/net35/YamlDotNet.xml",
+        "lib/net45/YamlDotNet.dll",
+        "lib/net45/YamlDotNet.xml",
+        "lib/netstandard1.3/YamlDotNet.dll",
+        "lib/netstandard1.3/YamlDotNet.xml",
+        "lib/netstandard2.1/YamlDotNet.dll",
+        "lib/netstandard2.1/YamlDotNet.xml",
+        "yamldotnet.9.1.0.nupkg.sha512",
+        "yamldotnet.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -1252,7 +1285,8 @@
       "Microsoft.Extensions.Options.ConfigurationExtensions >= 5.0.0",
       "Newtonsoft.Json >= 12.0.3",
       "System.Configuration.ConfigurationManager >= 5.0.0",
-      "System.IdentityModel.Tokens.Jwt >= 6.8.0"
+      "System.IdentityModel.Tokens.Jwt >= 6.8.0",
+      "YamlDotNet >= 9.1.0"
     ]
   },
   "packageFolders": {
@@ -1336,6 +1370,10 @@
           "System.IdentityModel.Tokens.Jwt": {
             "target": "Package",
             "version": "[6.8.0, )"
+          },
+          "YamlDotNet": {
+            "target": "Package",
+            "version": "[9.1.0, )"
           }
         },
         "imports": [

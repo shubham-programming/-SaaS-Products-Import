@@ -9,8 +9,7 @@ namespace SaaSProductsImport
     class Program
     {
         static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
+        { 
             Startup.Configure();
             // Assigns product sources from appsettings.json file into Configuration POCO model.
             var products = Startup.getProductImportSources();  

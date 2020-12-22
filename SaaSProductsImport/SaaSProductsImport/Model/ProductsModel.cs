@@ -11,6 +11,6 @@ namespace SaaSProductsImport.Model
     public class ProductsModel
     {
         public string ProductName {get; set;}
-        public ProductDetailsModel [] ProductsDetails { get; set; }
+        public List<ProductDetailsModel> ProductsDetails { get; set; }
     }
 }
