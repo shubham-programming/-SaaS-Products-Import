@@ -10,7 +10,7 @@ namespace SaaSProductsImport.BusinessLogicLayer
     /*
      * 'ProductFileFormatParser' class implements 'IProductFileFormatParser' interface . This class perform following functions --
      *      a. Includes methods for passing POCO 'ProductModel' details to dataAccess layer for database insert.
-     *      b. Contains functions to parse file content fetched from 'IProductFileReader' into POCO object 'ProductModel' for different file extensions - .csv , .json etc.
+     *      b. Contains functions to parse file content fetched from 'IProductFileReader' into POCO object 'ProductModel' for as per file extension type -{.csv,.json} etc.
     */
     public class ProductFileFormatParser : IProductFileFormatParser
     {
@@ -26,7 +26,7 @@ namespace SaaSProductsImport.BusinessLogicLayer
         /*
          * This function accepts productDetails -> content of file in string format , productName -> product Name ex- capterra 
          * This function performs following logic -
-         *          1. Parse Json string to productsModel object -> Products model object is passed to DataAccess layer for db insert.
+         *          1. Parse Json string to productsModel object -> Products model object is passed to DataAccess layer for database insert.
          */
         #endregion
         public int InsertJsonProducts(string productDetails, string productName)
