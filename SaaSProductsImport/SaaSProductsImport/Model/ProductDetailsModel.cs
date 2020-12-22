@@ -4,6 +4,9 @@ using System.Text;
 
 namespace SaaSProductsImport.Model
 {
+    /*
+     * POCO Model class of Product details - variable includes Name , Array of Catepories , Twitter
+    */
     public class ProductDetailsModel
     {
         private string Name { get; set; }
