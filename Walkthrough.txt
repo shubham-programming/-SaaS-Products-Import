@@ -1,0 +1,20 @@
+
+  - Installation steps -
+		1. Clone the repository at your local machine
+				- git clone https://github.com/shubham-programming/-SaaS-Products-Import.git 
+		2. Open the solution SaaSProductsImport.sln in VisualStudio 2019 .
+		3. Run the solution with prerequisite as in next section .
+		
+  - How to run your code / tests
+		1. Create Directory C:\Work\feed-products and place files to be processed in it . In case of URL we need to add URL in appsettings.json .
+		2. Run the 'SaaSProductsImport' project .
+		3. To Run the tests -> RunTest on 'SaaSProductsImportUnitTests' project. No perquisite needs to be followed in running tests.
+  - Where to find your code
+		1. Github Repository - https://github.com/shubham-programming/-SaaS-Products-Import
+		
+  - Was it your first time writing a unit test, using a particular framework, etc?
+		No , I have written unit test cases using RihnoMocks and Moq framework in my professional experience.
+  - What would you have done differently if you had had more time
+		1.I would have implemented Multi-threading in reading files from multiple import sources [ ex -folder,url,FTP etc.] to increase performance of application using parallel processing.
+		2.I would have introduced more exception handling to handle error scenarios in file read/parsing operations.
+		3.I would have thought of way to create a generic parser which would be inherited by .Json,.Yaml or different file-extension classes to reduce line of codes and increased readability of code.
