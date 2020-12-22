@@ -11,8 +11,9 @@ namespace SaaSProductsImport
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            Startup.Configure();            
-            var products = Startup.getProductImportSources();
+            Startup.Configure();
+            // Assigns product sources from appsettings.json file into Configuration POCO model.
+            var products = Startup.getProductImportSources();  
             ProductFileImporter fileImporter = new ProductFileImporter(Startup.serviceProvider.BuildServiceProvider().GetService<ProductFileReader>());
             fileImporter.ImportFile(products);
             Console.ReadLine();
