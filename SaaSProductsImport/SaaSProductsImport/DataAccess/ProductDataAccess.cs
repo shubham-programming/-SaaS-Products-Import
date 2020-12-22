@@ -5,8 +5,13 @@ using System.Text;
 
 namespace SaaSProductsImport.DataAccess
 {
-     public class ProductDataAccess : IProductDataAccess
+    /*
+    * 'ProductDataAccess' class implements contract with 'IProductDataAccess' class for following actions/features -
+    *      a. Includes methods for inserting products POCO class object  into database.
+   */
+    public class ProductDataAccess : IProductDataAccess
     {
+        // connectionString set through Dependency Injection - connectionString value configurable in appsettings.json
         private readonly string _connectionString;
         public ProductDataAccess(string connectionString)
         {
@@ -15,7 +20,7 @@ namespace SaaSProductsImport.DataAccess
         public int InsertProducts(ProductsModel products)
         {
             /*
-                Add logic for executing Database inserts 
+                Add logic for executing Database insert operation
             */
             return 0;
         }
