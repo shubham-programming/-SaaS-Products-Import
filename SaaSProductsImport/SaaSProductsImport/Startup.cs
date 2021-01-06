@@ -17,20 +17,18 @@ namespace SaaSProductsImport
     */
     public class Startup
     {
-        public  IConfigurationRoot Configuration;
-        public  ServiceCollection serviceProvider = new ServiceCollection();
-
+        private  IConfigurationRoot Configuration;
+        public  ServiceCollection ServiceProvider = new ServiceCollection();
 
         // Function to add services as perscope defined.        
-        public void AddInfrastructure()
+        private void AddInfrastructure()
         {
             //Add scope for dependency injection
-            serviceProvider.AddScoped<IProductDataAccess, ProductDataAccess>(i => new ProductDataAccess(BuildConnectionString()));
-            serviceProvider.AddScoped<IProductFileFormatParser, ProductFileFormatParser>(i => new ProductFileFormatParser(i.GetService<IProductDataAccess>()));
-            serviceProvider.AddScoped<IProductFileReader, ProductFileReader>(i => new ProductFileReader(i.GetService<IProductFileFormatParser>()));
-            serviceProvider.AddScoped<IProductImporter, ProductFileImporter>(i => new ProductFileImporter(i.GetService<IProductFileReader>()));
+            ServiceProvider.AddScoped<IProductDataAccess, ProductDataAccess>(i => new ProductDataAccess(BuildConnectionString()));
+            ServiceProvider.AddScoped<IProductFileFormatParser, ProductFileFormatParser>(i => new ProductFileFormatParser(i.GetService<IProductDataAccess>()));
+            ServiceProvider.AddScoped<IProductFileReader, ProductFileReader>(i => new ProductFileReader(i.GetService<IProductFileFormatParser>()));
+            ServiceProvider.AddScoped<IProductImporter, ProductFileImporter>(i => new ProductFileImporter(i.GetService<IProductFileReader>()));
         }
-
 
         // Function to cofigure configuration values through appsettings.json.      
         public void Configure()
@@ -47,7 +45,6 @@ namespace SaaSProductsImport
             AddInfrastructure();
 
         }
-
 
         // Function to fetch connectionString values from appsettings.json.      
         private string BuildConnectionString()
