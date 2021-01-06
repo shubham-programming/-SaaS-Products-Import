@@ -15,14 +15,14 @@ namespace SaaSProductsImport
     /*
       * 'Startup' is static class that adds configuration , services as per scope for the execution of entire application logic. 
     */
-    public static class Startup
+    public class Startup
     {
-        public static IConfigurationRoot Configuration;
-        public static ServiceCollection serviceProvider = new ServiceCollection();
+        public  IConfigurationRoot Configuration;
+        public  ServiceCollection serviceProvider = new ServiceCollection();
 
 
         // Function to add services as perscope defined.        
-        public static void AddInfrastructure()
+        public void AddInfrastructure()
         {
             //Add scope for dependency injection
             serviceProvider.AddScoped<IProductDataAccess, ProductDataAccess>(i => new ProductDataAccess(BuildConnectionString()));
@@ -33,7 +33,7 @@ namespace SaaSProductsImport
 
 
         // Function to cofigure configuration values through appsettings.json.      
-        public static void Configure()
+        public void Configure()
         {
             // Set up configuration sources.
             var builder = new ConfigurationBuilder();
@@ -50,7 +50,7 @@ namespace SaaSProductsImport
 
 
         // Function to fetch connectionString values from appsettings.json.      
-        private static string BuildConnectionString()
+        private string BuildConnectionString()
         {
             string connectionString = Configuration.GetConnectionString("DatabaseConnection");
             if (connectionString == null)
@@ -61,9 +61,9 @@ namespace SaaSProductsImport
         }
 
         // Function to assign POCO Model from product source configuration values in appsettings.json file.  
-        public static List<ProductImportConfiguration> getProductImportSources()
+        public IList<ProductImportConfiguration> getProductImportSources()
         {
-            List<ProductImportConfiguration> productImportConfiguration = new List<ProductImportConfiguration>();
+            IList<ProductImportConfiguration> productImportConfiguration = new List<ProductImportConfiguration>();
             Configuration.GetSection("ProductImportConfiguration").Bind(productImportConfiguration);
             return productImportConfiguration;
         }

@@ -9,11 +9,12 @@ namespace SaaSProductsImport
     class Program
     {
         static void Main(string[] args)
-        { 
-            Startup.Configure();
+        {
+            Startup startup = new Startup();
+            startup.Configure();
             // Assigns product sources from appsettings.json file into Configuration POCO model.
-            var products = Startup.getProductImportSources();  
-            ProductFileImporter fileImporter = new ProductFileImporter(Startup.serviceProvider.BuildServiceProvider().GetService<ProductFileReader>());
+            var products = startup.getProductImportSources();  
+            ProductFileImporter fileImporter = new ProductFileImporter(startup.serviceProvider.BuildServiceProvider().GetService<IProductFileReader>());
             fileImporter.ImportFile(products);
             Console.ReadLine();
 

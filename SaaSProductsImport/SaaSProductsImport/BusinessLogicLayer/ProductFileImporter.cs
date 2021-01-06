@@ -18,13 +18,13 @@ namespace SaaSProductsImport.BusinessLogicLayer
         private IProductFileReader _FileReader;
         public ProductFileImporter(IProductFileReader fileReader)
         {
-            _FileReader = Startup.serviceProvider.BuildServiceProvider().GetService<IProductFileReader>(); ;
+            _FileReader = fileReader;
         }
 
         /*
          * Function to check file source is folder/url/ , then reads files according to source .
         */
-        public void ImportFile(List<ProductImportConfiguration> productImportConfigurations)
+        public void ImportFile(IList<ProductImportConfiguration> productImportConfigurations)
         {
             //Iterate foreach import source defined in appsettings.json 
             foreach (ProductImportConfiguration importConfig in productImportConfigurations)

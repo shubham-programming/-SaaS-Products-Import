@@ -14,7 +14,7 @@ namespace SaaSProductsImport.BusinessLogicLayer
         */
 
         //Function to import file from Product Import sources for fileInput 
-        public void ImportFile(List<ProductImportConfiguration> productImportConfigurations);
+        public void ImportFile(IList<ProductImportConfiguration> productImportConfigurations);
         //Function to check if folder exists at product folder location specified by appsettings.json 
         public bool CheckFolderExists(string path);
     }
